@@ -13,11 +13,11 @@ This web app is used to classify in what direction, is the person's hand pointin
 
 # Overview
 
--   The model has been built on top of keras Sequential api and uses LSTM for training.
+-   The model has been trained using the concepts of transfer learning.
 
--   One thing to note is that the words in the sentence has been vectorized, so similar words may have similar vectors, which is a better option than using bag of words or Tf-Idf, which do not take into account the semantics of sentences.
+-   The model was compressed into a tflite file with 50% compression ratio.
 
--   Training a deep learning model on local system takes a lot of time, thats why the model has been trained on google collab with GPU session.
+-   Classification is done real-time; to capture live feed OpenCV has been used in the Backend.
 
 -   Finally, to make the web app Flask has been used in the Backend and HTML, CSS and Bootstrap on the frontend.
 
