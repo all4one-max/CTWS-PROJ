@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block content %}
+<img src="{{ url_for('video') }}" alt="" class="centreAlign videoCentre">
+{% if prediction == "up" %}
+<h3 >Up</h3>
+{% elif prediction == "down" %}
+<h3 >Down</h3>
+{% elif prediction == "left" %}
+<h3 >Left</h3>
+{% elif prediction == "right" %}
+<h3 >Right</h3>
+{% endif %}
+
+<p id="predictText" class="centreAlign predictionStyle"></p>
+<script>
+    var pp = document.getElementById("predictText")
+    setInterval(() => {
+        fetch("{{ url_for('getPred')}} ")
+            .then(response => {
+                response.text().then(t => (pp.innerHTML = t))
+            })
+    }, 1)
+</script>
+{% endblock %}
